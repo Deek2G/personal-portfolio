@@ -4,7 +4,7 @@
 /* CSS Variables */
 :root{
   /* Color Pallete */
-  --primary-color: #d3e97a; /* lime green */
+  --primary-color: #4b9bce; /* sky blue */
   --bg-color: #0a0a0a; /* dark bg */
   --text-color: #ffffff; /* white color */
   --secondary-bg: #222222; /* dark gray */
@@ -58,7 +58,7 @@ body {
 }
 
 /* nav links */
-.navbar a{
+.navbar a {
   color: var(--text-color);
   padding: 14px var(--element-gap);
   text-decoration: none;
@@ -66,7 +66,7 @@ body {
   transition: all var(--transition-fast);
 }
 
-.nav menu a:hover{
+.nav menu a:hover {
   background-color: var(--hover-text);
   color: var(--bg-color);
   border-radius: var(--border-radius-sm);
@@ -78,4 +78,156 @@ body {
   font-family: var(--font-display);
   font-size: 1.8rem;
   text-transform: uppercase;
+}
+
+/* =================== */
+/* Hero Section Styles */
+/* =================== */
+
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px var(--container-padding) 40px;
+  gap: 80px;
+  border-bottom: 1px solid var(--border-color);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0; /* prevents flex items from overflowing */
+}
+
+.hero-left h1 {
+  font-size: 6rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  line-height: 0.85;
+  font-family: var(--font-display);
+  letter-spacing: -2px;
+}
+
+.hero-left p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  text-align: left;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--hover-text);
+  max-width: 600px;
+}
+
+/* Hero Action Buttons Container */
+
+.hero-btns{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-hero-contact {
+  background-color: var(--primary-color);
+  padding: 18px 30px;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all var(--transition-fast);
+  min-width: 160px;
+}
+
+ .btn-hero-contact:hover {
+  background-color: var(--secondary-bg);
+  color: var(--primary-color);
+  transform: translate(-2px);
+}
+
+.btn-text {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: var(--font-primary);
+  color: var(--bg-color);
+  transition: all var(--transition-fast);
+}
+
+.btn-hero-contact:hover .btn-text {
+  color: var(--primary-color);
+}
+
+.btn-dot {
+  height: 8px;
+  width: 8px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-hero-contact:hover .btn-dot {
+  background-color: var(--primary-color);
+}
+
+/* Social Media Icons */
+
+.hero-btns .ph {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-bg);
+  padding: 16px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.hero-btns .ph:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+.hero-btns a {
+  text-decoration: none;
+}
+
+/* Hero Right Section */
+
+.hero-right {
+  /* flex: 1; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0; /* prevents flex items from overflowing */
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-width: 450px;
+  min-width: 300px;
+  background-color: antiquewhite;
+  border-radius: var(--border-radius-sm);
+  filter: brightness(0.9);
+  transition: transform var(--transition-slow);
+  object-fit: cover;
 }
