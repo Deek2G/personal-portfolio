@@ -759,3 +759,13 @@ body {
   z-index: 1100;
   background: var(--bg-color);
 }
+
+/* Section Divider Styles */
+
+.section-divider {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 48px auto 48px auto;
+  width: 80%;
+  opacity: 0.18;
+}

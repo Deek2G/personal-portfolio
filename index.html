@@ -26,8 +26,8 @@
         <h1 class="nav-logo"><a href="#">EJ Nisperos</a></h1>
         <!-- navigation menu -->
         <div class="nav-menu">
+          <a href="#about">About</a>
           <a href="#featured-projects">Work</a>
-          <a href="about.html">About</a>
           <a href="#contact">Contact</a>
         </div>
       </div>
@@ -59,43 +59,89 @@
       <div class="hero-right"></div>
       <img class="hero-image" src="/my-photo.jpg" alt="EJ Nisperos" />
     </div>
-    <!-- About Me Container -->
-    <div class="about-container">
-      <div class="about-left">
-        <h2>About Me</h2>
-        <p>
-          I an aspiring front-end developer with a passion for creating beautiful and functional
-          websites. I have experience in HTML, CSS, and JavaScript, and I am always eager to
-          learn new technologies and improve my skills.
-        </p>
-        <p>
-          When I'm not coding, you can find me exploring the web, watching TV shows/anime,
-          or playing videogames with my friends.
-        </p>
-      </div>
-      <div class="about-right">
-        <div class="skill-item">
-          <span>HTML, CSS, and JavaScript</span>
-          <div class="skill-level">Advanced</div>
-        </div>
-        <div class="skill-item">
-          <span>Flutter and Dart</span>
-          <div class="skill-level">Intermediate</div>
-        </div>
-        <div class="skill-item">
-          <span>Laravel (PHP) and Django (Python)</span>
-          <div class="skill-level">Advanced</div>
-        </div>
-        <div class="skill-item">
-          <span>Java</span>
-          <div class="skill-level">Intermediate</div>
-        </div>
-        <div class="skill-item">
-          <span>MySQL, MariaDB, and Firebase</span>
-          <div class="skill-level">Advanced</div>
+    <!-- About Section (merged from about.html) -->
+    <section id="about">
+      <div class="about-hero">
+        <div class="about-hero-content">
+          <h1>About Me</h1>
+          <p class="about-hero-subtitle">
+            Passionate front-end developer crafting digital experiences that matter.
+          </p>
         </div>
       </div>
-    </div>
+      <div class="about-detailed">
+        <div class="about-story">
+          <h2>My Story</h2>
+          <p>My journey started into web development started 3 years ago when I discovered the perfect blend of creativity and logic that coding offers. What started as curiousity about how websites work evolved into a deep passion for creating digital experiences that are both beautiful and functional.</p>
+          <p>Based in the "King City of the South", also known as Davao City, I had the privilege of working and collaborating with peers in web development projects. Each project taught me something new and reinforced my belief that good design and clean code can truly make a difference in people's lives.</p>
+          <p>I specialize in front-end technologies like React, JavaScript, and CSS Frameworks, always staying up-to-date with the latest industry trends and best practices. My approach combines technical expertise with a keen eye for design, ensuring, that every project not only works flawlessly but also provides exceptional user experience.</p>
+        </div>
+        <div class="about-skills-detailed">
+          <h2>Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-category">
+              <h3>Frontend Development</h3>
+              <ul>
+                <li>JavaScript (ES6+)</li>
+                <li>React & Next.js</li>
+                <li>HTML5 & CSS3</li>
+                <li>Tailwind CSS</li>
+                <li>Responsive Design</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Backend & Tools</h3>
+              <ul>
+                <li>Node.js & Express</li>
+                <li>MongoDB & PostgreSQL</li>
+                <li>Git and GitHub</li>
+                <li>Vite</li>
+                <li>Docker Basics</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Design and UX</h3>
+              <ul>
+                <li>Figma</li>
+                <li>UI/UX Principles</li>
+                <li>Accessibility</li>
+                <li>Performance Optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="about-approach">
+          <h2>My Approach</h2>
+          <div class="approach-grid">
+            <div class="approach-item">
+              <i class="ph ph-fill ph-lightbulb"></i>
+              <h3>Problem Solving</h3>
+              <p>I believe every challenge is an opportunity to create something better. I approach each project with curiousity and determination to find the best solution.</p>
+            </div>
+            <div class="approach-item">
+              <i class="ph ph-fill ph-users"></i>
+              <h3>User-Centered</h3>
+              <p>I write maintainable, scalable code that other developers can easily understand and build upon. Quality is never compromised.</p>
+            </div>
+            <div class="approach-item">
+              <i class="ph ph-fill ph-code"></i>
+              <h3>Clean Code</h3>
+              <p>Users are the heart of everything I build. I focus in building intuitive, accessible experiences that serve real human needs.</p>
+            </div>
+            <div class="approach-item">
+              <i class="ph ph-fill ph-trend-up"></i>
+              <h3>Continuous Learning</h3>
+              <p>Technology rapidly evolves, and so do I. I'm always exploring new tools, techniques, and best practices to stay ahead of the curve.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-personal">
+          <h2>Beyond Code</h2>
+          <p>When I'm not immersed in code, you'll find me exploring the web, diving into design and technology. I believe that inspiration comes from everywhere, and these experiences often inform my approach to web development.</p>
+        </div>
+      </div>
+    </section>
+    <hr class="section-divider" />
     <!-- Featured Projects Section Wrapper -->
     <div id="featured-projects" class="fp-section">
       <!-- Project Header -->
@@ -171,7 +217,6 @@
         </div>
       </div>
     </div>
-
     <!-- Footer Section -->
     <footer id="contact" class="footer">
       <div class="footer-content">
