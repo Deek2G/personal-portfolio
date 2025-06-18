@@ -17,6 +17,12 @@
 </head>
 
 <body>
+  <div id="preloader">
+    <div class="preloader-content">
+      <div class="preloader-spinner"></div>
+      <div class="preloader-text">Loading Portfolio...</div>
+    </div>
+  </div>
   <!-- main content wrapper -->
   <div id="main-content" class="main-content">
     <!-- navbar -->
@@ -265,34 +271,58 @@
     </script>
     <script type="module">
       import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
-
-      // Animate navbar links on load
-      animate('.nav-menu a', { opacity: [0, 1], y: [-20, 0] }, { delay: stagger(0.08), duration: 0.5 });
-
-      // Animate hero section on load
-      animate('.hero-left', { opacity: [0, 1], x: [-40, 0] }, { duration: 0.7, delay: 0.2 });
-      animate('.hero-image', { opacity: [0, 1], scale: [0.92, 1] }, { duration: 0.7, delay: 0.4 });
-
-      // Animate About Me section on scroll
-      inView('.about-container', (info) => {
-        animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
-      });
-
-      // Animate Featured Projects header and projects on scroll
-      inView('.fp-header', (info) => {
-        animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
-      });
-      inView('.fp-project-1', (info) => {
-        animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, delay: 0.1 });
-      });
-
-      // Animate footer on scroll
-      inView('.footer', (info) => {
-        animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+      function runAnimations() {
+        // Animate navbar links on load
+        animate('.nav-menu a', { opacity: [0, 1], y: [-20, 0] }, { delay: stagger(0.08), duration: 0.5 });
+        // Animate hero section on load
+        animate('.hero-left', { opacity: [0, 1], x: [-40, 0] }, { duration: 0.7, delay: 0.2 });
+        animate('.hero-image', { opacity: [0, 1], scale: [0.92, 1] }, { duration: 0.7, delay: 0.4 });
+        // Animate About Me section on scroll
+        inView('.about-container', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+        });
+        // Animate Featured Projects header and projects on scroll
+        inView('.fp-header', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+        });
+        inView('.fp-project-1', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, delay: 0.1 });
+        });
+        // Animate footer on scroll
+        inView('.footer', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+        });
+      }
+      window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const preloaderText = document.querySelector('.preloader-text');
+        const mainContent = document.getElementById('main-content');
+        if (mainContent) mainContent.classList.remove('visible');
+        if (preloader) {
+          // Show 'Loading Portfolio...' for 3 seconds, then 'Portfolio Loaded!' for 2 seconds
+          setTimeout(() => {
+            if (preloaderText) preloaderText.textContent = 'Portfolio Loaded!';
+          }, 3000);
+          setTimeout(() => {
+            preloader.style.opacity = 0;
+            setTimeout(() => {
+              preloader.style.display = 'none';
+              if (mainContent) {
+                mainContent.classList.add('visible');
+              }
+              runAnimations();
+            }, 500);
+          }, 5000); // Show preloader for 5 seconds total
+        } else {
+          if (mainContent) mainContent.classList.add('visible');
+          runAnimations();
+        }
       });
     </script>
   </div>
   <!-- End of Main Content Wrapper -->
+
+  <!-- Preloader CSS moved to style.css -->
 </body>
 
 </html>
