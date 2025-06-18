@@ -273,5 +273,33 @@
           });
         }
     </script>
+    <script type="module">
+        import { animate, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+
+        // Animate navbar links on load
+        animate('.nav-menu a', { opacity: [0, 1], y: [-20, 0] }, { delay: stagger(0.08), duration: 0.5 });
+
+        // Animate about hero section on load
+        animate('.about-hero-content', { opacity: [0, 1], y: [-40, 0] }, { duration: 0.7, delay: 0.2 });
+
+        // Animate detailed about sections on scroll
+        inView('.about-story', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+        });
+        inView('.about-skills-detailed', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, delay: 0.1 });
+        });
+        inView('.about-approach', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, delay: 0.2 });
+        });
+        inView('.about-personal', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7, delay: 0.3 });
+        });
+
+        // Animate footer on scroll
+        inView('.footer', (info) => {
+          animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
+        });
+    </script>
 </body>
 </html>
