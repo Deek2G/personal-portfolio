@@ -293,30 +293,25 @@
           animate(info.target, { opacity: [0, 1], y: [40, 0] }, { duration: 0.7 });
         });
       }
-      window.addEventListener('load', function() {
+      document.addEventListener('DOMContentLoaded', function() {
         const preloader = document.getElementById('preloader');
         const preloaderText = document.querySelector('.preloader-text');
         const mainContent = document.getElementById('main-content');
         if (mainContent) mainContent.classList.remove('visible');
-        if (preloader) {
-          // Show 'Loading Portfolio...' for 3 seconds, then 'Portfolio Loaded!' for 2 seconds
+        // Show 'Loading Portfolio...' for 3 seconds, then 'Portfolio Loaded!' for 2 seconds
+        setTimeout(() => {
+          if (preloaderText) preloaderText.textContent = 'Portfolio Loaded!';
+        }, 3000);
+        setTimeout(() => {
+          if (preloader) preloader.style.opacity = 0;
           setTimeout(() => {
-            if (preloaderText) preloaderText.textContent = 'Portfolio Loaded!';
-          }, 3000);
-          setTimeout(() => {
-            preloader.style.opacity = 0;
-            setTimeout(() => {
-              preloader.style.display = 'none';
-              if (mainContent) {
-                mainContent.classList.add('visible');
-              }
-              runAnimations();
-            }, 500);
-          }, 5000); // Show preloader for 5 seconds total
-        } else {
-          if (mainContent) mainContent.classList.add('visible');
-          runAnimations();
-        }
+            if (preloader) preloader.style.display = 'none';
+            if (mainContent) {
+              mainContent.classList.add('visible');
+            }
+            if (typeof runAnimations === 'function') runAnimations();
+          }, 500);
+        }, 5000); // Show preloader for 5 seconds total
       });
     </script>
   </div>
