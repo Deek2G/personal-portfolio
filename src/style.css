@@ -52,9 +52,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-color);
+  background: rgba(10, 10, 10, 0.85); /* original bg color with transparency */
+  border-bottom: 1.5px solid var(--border-color);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
   padding: var(--section-padding);
   height: 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* nav links */
@@ -63,13 +68,16 @@ body {
   padding: 14px var(--element-gap);
   text-decoration: none;
   text-align: center;
-  transition: all var(--transition-fast);
+  transition: all var(--transition-fast), box-shadow 0.4s;
+  position: relative;
+  z-index: 1;
 }
 
-.nav menu a:hover {
+.navbar a:hover {
   background-color: var(--hover-text);
   color: var(--bg-color);
   border-radius: var(--border-radius-sm);
+  box-shadow: 0 0 0 0 transparent;
 }
 
 .nav-logo a {
@@ -78,6 +86,13 @@ body {
   font-family: var(--font-display);
   font-size: 1.8rem;
   text-transform: uppercase;
+}
+
+.nav-logo a:hover {
+  background: none;
+  color: var(--text-color);
+  box-shadow: none;
+  cursor: pointer;
 }
 
 /* =================== */
@@ -599,4 +614,148 @@ body {
   border-top: 1px solid var(--border-color);
   color: var(--border-color);
   font-family: var(--primary-color);
+}
+
+/* ABOUT PAGE STYLES TO MATCH INDEX.HTML */
+
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 80px var(--container-padding) 40px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-color);
+}
+
+.about-hero-content {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-hero-content h1 {
+  font-size: 4rem;
+  font-family: var(--font-display);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.about-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--hover-text);
+  font-family: var(--font-primary);
+  margin-bottom: 0;
+}
+
+.about-detailed {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 80px var(--container-padding);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-story, .about-skills-detailed, .about-approach, .about-personal {
+  background: var(--secondary-bg);
+  border-radius: var(--border-radius-sm);
+  padding: 40px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.about-story h2, .about-skills-detailed h2, .about-approach h2, .about-personal h2 {
+  font-size: 2.2rem;
+  font-family: var(--font-display);
+  color: var(--primary-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.about-story p, .about-personal p {
+  font-size: 1.1rem;
+  color: var(--hover-text);
+  font-family: var(--font-primary);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.skill-category {
+  flex: 1 1 250px;
+  background: none;
+  padding: 0;
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category li {
+  font-size: 1rem;
+  color: var(--text-color);
+  margin-bottom: 8px;
+  font-family: var(--font-primary);
+}
+
+.about-approach .approach-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.approach-item {
+  flex: 1 1 220px;
+  background: var(--bg-color);
+  border-radius: var(--border-radius-sm);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.approach-item i {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.approach-item h3 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-family: var(--font-primary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.approach-item p {
+  font-size: 1rem;
+  color: var(--hover-text);
+  font-family: var(--font-primary);
+  margin-bottom: 0;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  background: var(--bg-color);
 }
