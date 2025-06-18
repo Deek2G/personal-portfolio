@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "copy about.html dist\\",
+    "postbuild": "cp about.html dist/",
     "preview": "vite preview"
   },
   "devDependencies": {
